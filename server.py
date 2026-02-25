@@ -11,6 +11,10 @@ def sent_analyzer():
     # Pass the text to the emotion_detector function and store the response
     response = emotion_detector(text_to_analyze)
 
+    # Task 7: Error handling for invalid/blank input
+    if response['dominant_emotion'] is None:
+        return "Invalid text! Please try again!"
+
     # Extract emotions and dominant_emotion from the response
     anger = response['anger']
     disgust = response['disgust']
